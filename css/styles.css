@@ -1,0 +1,67 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.burger__form {
+  position: relative;
+  width: 300px;
+  height: 100px;
+  background-color: lightgoldenrodyellow;
+  margin: 0 auto;
+}
+
+.burger__line {
+  position: relative;
+  top: 30px;
+  width: 40px;
+  height: 4px;
+  background-color: rgb(0, 0, 0);
+  transition: background 0.1s linear 0.3s;
+}
+
+.burger__line::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -13px;
+  width: 40px;
+  height: 4px;
+  background-color: rgb(0, 0, 0);
+  transition: transform 0.3s ease, top 0.3s ease 0.3s;
+}
+
+.burger__line::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 13px;
+  width: 40px;
+  height: 4px;
+  background-color: rgb(0, 0, 0);
+  transition: transform 0.3s ease, top 0.3s ease 0.3s;
+}
+
+.burger__input:checked ~ .burger__line::before {
+  top: 0;
+  transform: rotate(45deg);
+  transition: top 0.3s ease, transform 0.3s ease 0.3s;
+}
+
+.burger__input:checked ~ .burger__line::after {
+  top: 0;
+  transform: rotate(-45deg);
+  transition: top 0.3s ease, transform 0.3s ease 0.3s;
+}
+
+.burger__input:checked ~ .burger__line {
+  background-color: transparent;
+  transition: background 0.3s linear;
+}
