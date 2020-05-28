@@ -12,18 +12,23 @@ html {
 
 .burger__form {
   position: relative;
-  width: 300px;
-  height: 100px;
-  background-color: lightgoldenrodyellow;
+  display: flex;
+  align-items: flex-start;
+  width: 40px;
+  height: 40px;
   margin: 0 auto;
+}
+
+.burger__input {
+  display: none;
 }
 
 .burger__line {
   position: relative;
-  top: 30px;
+  top: 50%;
   width: 40px;
   height: 4px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(74, 255, 98);
   transition: background 0.1s linear 0.3s;
 }
 
@@ -34,8 +39,9 @@ html {
   top: -13px;
   width: 40px;
   height: 4px;
-  background-color: rgb(0, 0, 0);
-  transition: transform 0.3s ease, top 0.3s ease 0.3s;
+  background-color: rgb(74, 255, 98);
+  transition: transform 0.3s ease, top 0.3s ease 0.3s,
+    background 0.1s linear 0.3s;
 }
 
 .burger__line::after {
@@ -45,23 +51,39 @@ html {
   top: 13px;
   width: 40px;
   height: 4px;
-  background-color: rgb(0, 0, 0);
-  transition: transform 0.3s ease, top 0.3s ease 0.3s;
+  background-color: rgb(74, 255, 98);
+  transition: transform 0.3s ease, top 0.3s ease 0.3s,
+    background 0.1s linear 0.3s;
 }
 
 .burger__input:checked ~ .burger__line::before {
   top: 0;
   transform: rotate(45deg);
-  transition: top 0.3s ease, transform 0.3s ease 0.3s;
+  background-color: tomato;
+  transition: top 0.3s ease, transform 0.3s ease 0.3s,
+    background 0.1s linear 0.3s;
 }
 
 .burger__input:checked ~ .burger__line::after {
   top: 0;
   transform: rotate(-45deg);
-  transition: top 0.3s ease, transform 0.3s ease 0.3s;
+  background-color: tomato;
+  transition: top 0.3s ease, transform 0.3s ease 0.3s,
+    background 0.1s linear 0.3s;
 }
 
 .burger__input:checked ~ .burger__line {
   background-color: transparent;
   transition: background 0.3s linear;
+}
+
+.burger__label {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
 }
