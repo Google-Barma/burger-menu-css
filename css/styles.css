@@ -14,6 +14,21 @@ a {
   text-decoration: none;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+}
+
 .burger__form {
   position: relative;
   display: flex;
@@ -95,26 +110,22 @@ a {
 
 /* //menu// */
 .burger__menu {
+  /* position: absolute; */
+  margin: 30px auto 0;
   display: block;
-  margin: 0 auto;
   max-width: 100px;
   text-align: center;
   height: 0;
 }
 
-.burger__item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .burger__link {
+  display: block;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   text-transform: capitalize;
   color: rgb(83, 83, 83);
   border: 1px solid transparent;
-  padding: 10px;
+  padding: 5px;
   transition: transform 0.3s ease, border 0.1s linear;
 }
 
@@ -127,9 +138,5 @@ a {
 }
 
 .burger__input:checked ~ .burger__menu {
-  height: 100%;
-  background-image: linear-gradient(
-    rgba(51, 77, 92, 0.3),
-    rgba(255, 255, 255, 0.3)
-  );
+  display: block;
 }
