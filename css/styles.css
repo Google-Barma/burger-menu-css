@@ -103,6 +103,10 @@ li {
   z-index: 1;
 }
 
+* {
+  outline: 1px solid salmon;
+}
+
 /* //menu// */
 .burger__menu {
   position: absolute;
@@ -110,10 +114,17 @@ li {
   top: 30px;
   transform: translateX(-50%);
   margin: 30px auto 0;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
   max-width: 100px;
   text-align: center;
   height: 0;
+  transition: opacity 1s ease;
+}
+
+.burger__input:checked ~ .burger__menu {
+  visibility: visible;
+  opacity: 1;
 }
 
 .burger__link {
@@ -132,8 +143,4 @@ li {
   border-width: 10px;
   border-top: 1px solid rgb(53, 211, 132);
   border-bottom: 1px solid rgb(53, 211, 132);
-}
-
-.burger__input:checked ~ .burger__menu {
-  display: block;
 }
