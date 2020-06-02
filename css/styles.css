@@ -110,16 +110,21 @@ li {
   top: 30px;
   transform: translateX(-50%);
   margin: 30px auto 0;
-  visibility: hidden;
-  opacity: 0;
-  max-width: 100px;
+  width: 120px;
   text-align: center;
-  transition: opacity 1s ease;
+  height: 0;
+  overflow: hidden;
+  transition: all 0.5s linear;
 }
 
 .burger__input:checked ~ .burger__menu {
-  visibility: visible;
-  opacity: 1;
+  height: 210px;
+  /* padding-top: 5px;
+  padding-bottom: 5px; */
+}
+
+.burger__item {
+  padding: 5px;
 }
 
 .burger__link {
